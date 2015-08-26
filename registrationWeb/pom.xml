@@ -26,15 +26,35 @@
 			<version>3.8.1</version>
 			<scope>test</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>org.glassfish.jersey.media</groupId>
+			<artifactId>jersey-media-json-jackson</artifactId>
+			<version>2.7</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.glassfish.jersey.ext</groupId>
 			<artifactId>jersey-spring3</artifactId>
-			<version>2.4.1</version>
+			<version>2.7</version>
 			<exclusions>
 				<exclusion>
 					<groupId>org.springframework</groupId>
 					<artifactId>spring-core</artifactId>
 				</exclusion>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-context</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-asm</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-aop</artifactId>
+				</exclusion>
+
 				<exclusion>
 					<groupId>org.springframework</groupId>
 					<artifactId>spring-web</artifactId>
@@ -44,12 +64,9 @@
 					<artifactId>spring-beans</artifactId>
 				</exclusion>
 			</exclusions>
+
 		</dependency>
-		<dependency>
-			<groupId>org.glassfish.jersey.media</groupId>
-			<artifactId>jersey-media-json-jackson</artifactId>
-			<version>2.4.1</version>
-		</dependency>
+
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
@@ -61,13 +78,6 @@
 	<build>
 		<finalName>registrationweb</finalName>
 		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-war-plugin</artifactId>
-				<configuration>
-					<failOnMissingWebXml>false</failOnMissingWebXml>
-				</configuration>
-			</plugin>
 			<plugin>
 				<groupId>org.apache.tomcat.maven</groupId>
 				<artifactId>tomcat7-maven-plugin</artifactId>
