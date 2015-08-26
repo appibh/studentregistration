@@ -1,0 +1,13 @@
+execute mongo in bin folder and execute the below commands from command line
+
+show dbs
+
+use registration
+
+db.createCollection("streams")
+
+db.createCollection("students")
+
+db.createCollection("faculties")
+
+show collections
