@@ -11,11 +11,14 @@
 		<module>registrationModel</module>
 		<module>registrationService</module>
 		<module>registrationWeb</module>
+		<module>registrationangularweb</module>
 	</modules>
 	<properties>
 		<spring.version>4.1.7.RELEASE</spring.version>
 		<junit.version>4.12</junit.version>
 		<security.version>4.0.1.RELEASE</security.version>
+		<org.apache.camel.version>2.15.3</org.apache.camel.version>
+		<org.apache.camel.sql.version>2.15.3</org.apache.camel.sql.version>
 	</properties>
 
 	<dependencies>
@@ -62,6 +65,120 @@
 			<artifactId>spring-data-mongodb</artifactId>
 			<version>1.7.2.RELEASE</version>
 		</dependency>
+
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-spring</artifactId>
+			<version>${org.apache.camel.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-context</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-aop</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-tx</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-spring-javaconfig</artifactId>
+			<version>${org.apache.camel.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-jaxb</artifactId>
+			<version>${org.apache.camel.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.sun.xml.bind</groupId>
+					<artifactId>jaxb-impl</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-jackson</artifactId>
+			<version>${org.apache.camel.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-freemarker</artifactId>
+			<version>${org.apache.camel.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-stringtemplate</artifactId>
+			<version>${org.apache.camel.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-http</artifactId>
+			<version>${org.apache.camel.version}</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>geronimo-servlet_2.5_spec</artifactId>
+					<groupId>org.apache.geronimo.specs</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-jdbc</artifactId>
+			<version>${org.apache.camel.version}</version>
+		</dependency>
+
+		<!-- camel-sql -->
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-sql</artifactId>
+			<version>${org.apache.camel.sql.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish.jersey.media</groupId>
+			<artifactId>jersey-media-json-jackson</artifactId>
+			<version>2.7</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.glassfish.jersey.ext</groupId>
+			<artifactId>jersey-spring3</artifactId>
+			<version>2.7</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-core</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-context</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-asm</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-aop</artifactId>
+				</exclusion>
+
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-web</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-beans</artifactId>
+				</exclusion>
+			</exclusions>
+
+		</dependency>
+
 	</dependencies>
 	<build>
 		<plugins>

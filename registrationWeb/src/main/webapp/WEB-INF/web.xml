@@ -5,9 +5,7 @@
 
 	<context-param>
 		<param-name>contextClass</param-name>
-		<param-value>
-          org.springframework.web.context.support.AnnotationConfigWebApplicationContext
-      </param-value>
+		<param-value>org.springframework.web.context.support.AnnotationConfigWebApplicationContext</param-value>
 	</context-param>
 
 	<!-- Configuration locations must consist of one or more comma- or space-delimited 

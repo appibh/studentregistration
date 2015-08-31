@@ -1,11 +1,7 @@
 package registrationService;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.registration.dao.FacultyDao;
 import org.registration.dao.StreamDao;
-import org.registration.model.Course;
 import org.registration.model.Faculty;
 import org.registration.model.Stream;
 import org.registration.serviceconfig.ServiceConfiguration;
