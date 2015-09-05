@@ -1,0 +1,10 @@
+//bower.json = we define angular dependencies here(gets downloaded by bower install)..
+//build folder is created when we run grunt watch task
+//Gruntfile.js = contains all grunt tasks defined like clean, compile, minify js, css, copy, watch(buid, unit-test,delta) etc.. all the required tokens comes from build.config.js
+//package.json = define all grunt dependencies that needs to be downloaded to node-modules dir by npm(node packing manager(npm-install)) here..
+//.bowerrc = contains directory and json properties, when we run bower it look for this errc file
+//we can also set vendor_files property in build.config.js for dependencies that will get pulled down by grunt automatically
+//we dont have to touch index.html for including scripts, grunt takes care of that automatically for us
+//all our modules we are going to develop is present in app/src/app directory
+//the new module we are going to develop has to be included in app.js file in app/src/app directory
+//grunt watch is going to rebuild the application automatically whenever there is a change in js file
