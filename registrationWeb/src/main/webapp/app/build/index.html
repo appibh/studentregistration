@@ -32,6 +32,7 @@
     <script type="text/javascript" src="src/app/about/about.js"></script>
     <script type="text/javascript" src="src/app/app.js"></script>
     <script type="text/javascript" src="src/app/home/home.js"></script>
+    <script type="text/javascript" src="src/app/login/login.js"></script>
     <script type="text/javascript" src="src/common/plusOne/plusOne.js"></script>
     <script type="text/javascript" src="templates-common.js"></script>
     <script type="text/javascript" src="templates-app.js"></script>
@@ -43,6 +44,9 @@
   </head>
   <body>
     <div class="container">
+ 	   <div class="page-header">
+		    <h2>Student Registration and Evaluation System</h2> 
+  	  </div>
       <div class="navbar navbar-default">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" ng-init="menuCollapsed = true"
@@ -52,7 +56,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <div class="navbar-brand">
+<!--           <div class="navbar-brand">
             ngbp
             <small>
               <a href="http://github.com/ngbp/ngbp/blob/v0.3.2-release/CHANGELOG.md">
@@ -60,34 +64,41 @@
               </a>
             </small>
           </div>
-        </div>
+ -->        
+ 		</div>
         <div class="collapse navbar-collapse" collapse="menuCollapsed">
           <ul class="nav navbar-nav">
             <li ui-sref-active="active">
+              <a href ui-sref="home" ng-show="pageTitle == 'Login' || pageTitle == 'Register'">
+                {{ pageTitle }}
+              </a>
+            </li>
+            <li ui-sref-active="active" ng-show="pageTitle != 'Login' && pageTitle != 'Register'">
               <a href ui-sref="home">
                 <i class="fa fa-home"></i>
                 Home
               </a>
             </li>
-            <li ui-sref-active="active">
+  
+            <li ui-sref-active="active" ng-show="pageTitle != 'Login' && pageTitle != 'Register'">
               <a href ui-sref="about">
                 <i class="fa fa-info-circle"></i>
                 What is it ?
               </a>
             </li>
-            <li>
+            <li ng-show="pageTitle != 'Login' && pageTitle != 'Register'" >
               <a href="https://github.com/ngbp/ngbp#readme">
                 <i class="fa fa-book"></i>
                 Read the Docs
               </a>
             </li>
-            <li>
+            <li ng-show="pageTitle != 'Login' && pageTitle != 'Register'">
               <a href="https://github.com/ngbp/ngbp">
                 <i class="fa fa-github-alt"></i>
                 Github
               </a>
             </li>
-            <li>
+            <li ng-show="pageTitle != 'Login' && pageTitle != 'Register'">
               <a href="https://github.com/ngbp/ngbp/issues">
                 <i class="fa fa-comments"></i>
                 Support
@@ -103,20 +114,8 @@
     <footer class="footer">
       <div class="container">
         <div class="footer-inner">
-          <ul class="social">
-            <li><a target="_blank" href="http://gplus.to/joshdmiller"><i class="fa fa-google-plus-sign"></i></a></li>
-            <li><a target="_blank" href="http://twitter.com/joshdmiller"><i class="fa fa-twitter-sign"></i></a></li>
-            <li><a target="_blank" href="http://linkedin.com/in/joshdmiller"><i class="fa fa-linkedin-sign"></i></a></li>
-            <li><a target="_blank" href="http://github.com/ngbp/ngbp"><i class="fa fa-github-sign"></i></a></li>
-          </ul>
-          
-
-          <p>
-            (c) 2013 <a href="http://www.joshdavidmiller.com">Josh David Miller</a>. 
-            <a href="http://github.com/ngbp/ngbp/fork_select">Fork this</a>
-            to kickstart your next project.
-            <br />
-            ngbp is based on
+           <p>
+            (c) 2014-2017 Student registration app is based on
             <a href="http://www.angularjs.org">AngularJS</a>,
             <a href="http://getbootstrap.com">Bootstrap</a>, 
             <a href="http://angular-ui.github.com/bootstrap">UI Bootstrap</a>,

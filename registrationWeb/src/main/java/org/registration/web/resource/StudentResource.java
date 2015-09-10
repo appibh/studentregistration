@@ -4,21 +4,27 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
-import org.registration.model.Name;
-import org.registration.model.Student;
+import org.apache.camel.ProducerTemplate;
+import org.registration.model.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 @Path("/student")
 public class StudentResource {
+	
+	@Autowired
+	private ProducerTemplate producerTemplate;
 
 	@Path("/get")
 	@GET
 	@Produces("application/json")
-	public Student getStudent(){
-		Student s1 = new Student();
-		s1.setName(new Name("ravi", "thota", ""));
-		s1.setId("ravitho");
-		return s1;
+	public User getStudent(){
+		User u1 = new User();
+		u1.setFirstName("ravi");
+		u1.setLastName("thota");
+		u1.setEmailId("ravithota@gmail.com");
+		return u1;
 	}
+	
 }

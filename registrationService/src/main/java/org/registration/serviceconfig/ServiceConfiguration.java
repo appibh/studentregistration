@@ -9,6 +9,8 @@ import org.apache.camel.impl.DefaultCamelContext;
 import org.apache.camel.osgi.SpringCamelContextFactory;
 import org.apache.camel.spring.SpringCamelContext;
 import org.registration.camel.routes.CreateStreamRouteBuilder;
+import org.registration.camel.routes.CreateUserRouteBuilder;
+import org.registration.camel.routes.ValidateUserRouteBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
@@ -59,6 +61,9 @@ public class ServiceConfiguration {
 		CamelContext camelContext = new SpringCamelContext(applicationContext);
 		camelContext.start();
 		camelContext.addRoutes(new CreateStreamRouteBuilder());
+		camelContext.addRoutes(new ValidateUserRouteBuilder());
+		camelContext.addRoutes(new CreateUserRouteBuilder());
+
 		return camelContext;
 	}
 	

@@ -18,7 +18,7 @@ public class Course implements Serializable {
 	private String courseName;
 	
 	@DBRef
-	private Faculty facultyMember;
+	private User facultyMember;
 
 	private Set<Course> preReqs;
 	
@@ -44,12 +44,12 @@ public class Course implements Serializable {
 		this.courseName = courseName;
 	}
 
-	public Faculty getFacultyMember() {
+	public User getFacultyMember() {
 		return facultyMember;
 	}
 
 
-	public void setFacultyMember(Faculty facultyMember) {
+	public void setFacultyMember(User facultyMember) {
 		this.facultyMember = facultyMember;
 	}
 

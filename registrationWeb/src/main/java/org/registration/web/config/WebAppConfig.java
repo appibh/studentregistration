@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
 @Configuration
-@Import(value={ServiceConfiguration.class})
+@Import(value={SecurityConfig.class,ServiceConfiguration.class})
 @ComponentScan(basePackages={"org.registration.web.resource"})
 public class WebAppConfig {
 

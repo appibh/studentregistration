@@ -9,7 +9,7 @@ public class Address implements Serializable {
 	private String street;
 	private String city;
 	private String state;
-	private String country;
+	private String country = "US";
 	private String zipCode;
 	private boolean active;
 	

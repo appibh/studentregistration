@@ -1,4 +1,4 @@
-angular.module('templates-app', ['about/about.tpl.html', 'home/home.tpl.html']);
+angular.module('templates-app', ['about/about.tpl.html', 'home/home.tpl.html', 'login/login.tpl.html', 'login/register.tpl.html']);
 
 angular.module("about/about.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("about/about.tpl.html",
@@ -272,136 +272,144 @@ angular.module("about/about.tpl.html", []).run(["$templateCache", function($temp
 
 angular.module("home/home.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("home/home.tpl.html",
-    "<div class=\"jumbotron\">\n" +
-    "  <h1>Non-Trivial AngularJS Made Easy</h1>\n" +
-    "\n" +
-    "  <p class=\"lead\">\n" +
-    "    Everything you need to kickstart AngularJS projects: a best-practice\n" +
-    "    directory structure, an intelligent build system, and the best web design\n" +
-    "    libraries around.\n" +
-    "  </p>\n" +
-    "\n" +
-    "  <ul class=\"list-inline social-buttons\">\n" +
-    "    <li>\n" +
-    "      <iframe \n" +
-    "        src=\"http://ghbtns.com/github-btn.html?user=ngbp&amp;repo=ngbp&amp;type=watch&amp;count=true\" \n" +
-    "        allowtransparency=\"true\" \n" +
-    "        frameborder=\"0\" \n" +
-    "        scrolling=\"0\" \n" +
-    "        width=\"110\" \n" +
-    "        height=\"20\">\n" +
-    "      </iframe>\n" +
-    "    </li>\n" +
-    "    <li>\n" +
-    "      <iframe \n" +
-    "        src=\"http://ghbtns.com/github-btn.html?user=ngbp&amp;repo=ngbp&amp;type=fork&amp;count=true\" \n" +
-    "        allowtransparency=\"true\" \n" +
-    "        frameborder=\"0\" \n" +
-    "        scrolling=\"0\" \n" +
-    "        width=\"95\" \n" +
-    "        height=\"20\">\n" +
-    "      </iframe>\n" +
-    "    </li>\n" +
-    "    <li>\n" +
-    "       <iframe allowtransparency=\"true\" frameborder=\"0\" scrolling=\"no\"\n" +
-    "        src=\"https://platform.twitter.com/widgets/tweet_button.html?url=http%3A%2F%2Fbit.ly%2FngBoilerplate&counturl=http%3A%2F%2Fngbp.github.com%2Fngbp&text=Check%20out%20%23ngbp%20-%20an%20awesome%20kickstarter%20for%20web%20projects%20%7C&hashtags=angularjs&via=joshdmiller&related=joshdmiller\"\n" +
-    "        style=\"width:130px; height:20px;\"></iframe>\n" +
-    "    </li>\n" +
-    "    <li plus-one></li>\n" +
-    "  </ul> \n" +
-    "  \n" +
-    "  <div class=\"btn-group\">\n" +
-    "    <a href=\"https://github.com/ngbp/ngbp#readme\" class=\"btn btn-large btn-default\">\n" +
-    "      <i class=\"fa fa-book\"></i>\n" +
-    "      Read the Docs\n" +
-    "    </a>\n" +
-    "    <a href=\"https://github.com/ngbp/ngbp\" class=\"btn btn-large btn-success\">\n" +
-    "      <i class=\"fa fa-download\"></i>\n" +
-    "      Download\n" +
-    "    </a>\n" +
-    "  </div>\n" +
-    "\n" +
-    "</div>\n" +
-    "\n" +
-    "<div class=\"marketing\">\n" +
-    "  <div class=\"row\">\n" +
-    "    <div class=\"col-xs-12 col-sm-6 col-md-4\">\n" +
-    "      <h4><i class=\"fa fa-thumbs-up\"></i> Good to Go!</h4>\n" +
-    "      <p>\n" +
-    "        Kickstarts your project quickly, with everything you need, so you can \n" +
-    "        focus on what matters: your app.\n" +
-    "      </p>\n" +
-    "    </div>\n" +
-    "    <div class=\"col-xs-12 col-sm-6 col-md-4\">\n" +
-    "      <h4><i class=\"fa fa-magic\"></i> Complete Build System</h4>\n" +
-    "      <p>\n" +
-    "        A smart, <a href=\"http://gruntjs.com\">Grunt</a>-based build system \n" +
-    "        designed to save you time and energy.\n" +
-    "      </p>\n" +
-    "    </div>\n" +
-    "    <div class=\"col-xs-12 col-sm-6 col-md-4\">\n" +
-    "      <h4><i class=\"fa fa-retweet\"></i> Modularization</h4>\n" +
-    "      <p>\n" +
-    "        Supports a structure that maintains separation of concerns while\n" +
-    "        ensuring maximum code reuse.\n" +
-    "      </p>\n" +
-    "    </div>\n" +
-    "  </div>\n" +
-    "  <div class=\"row\">\n" +
-    "    <div class=\"col-xs-12 col-sm-6 col-md-4\">\n" +
-    "      <h4><i class=\"fa fa-star\"></i> AngularJS</h4>\n" +
-    "      <p>\n" +
-    "        JavaScript framework that augments browser-based, single-page \n" +
-    "        applications with MVC functionality.\n" +
-    "        <a href=\"http://angularjs.org\">More &raquo;</a>\n" +
-    "      </p>\n" +
-    "    </div>\n" +
-    "    <div class=\"col-xs-12 col-sm-6 col-md-4\">\n" +
-    "      <h4><i class=\"fa fa-resize-small\"></i> LESS CSS</h4>\n" +
-    "      <p>\n" +
-    "        The dynamic stylesheet language that extends CSS with efficiency.\n" +
-    "        <a href=\"http://lesscss.org\">More &raquo;</a>\n" +
-    "      </p>\n" +
-    "    </div>\n" +
-    "    <div class=\"col-xs-12 col-sm-6 col-md-4\">\n" +
-    "      <h4><i class=\"fa fa-twitter\"></i> Twitter Bootstrap</h4>\n" +
-    "      <p>\n" +
-    "        Sleek, intuitive, and powerful front-end framework for faster and easier\n" +
-    "        web development.\n" +
-    "        <a href=\"http://getbootstrap.com\">More &raquo;</a>\n" +
-    "      </p>\n" +
-    "    </div>\n" +
-    "  </div>\n" +
-    "  <div class=\"row\">\n" +
-    "    <div class=\"col-xs-12 col-sm-6 col-md-4\">\n" +
-    "      <h4><i class=\"fa fa-circle\"></i> Angular UI Bootstrap</h4>\n" +
-    "      <p>\n" +
-    "        Pure AngularJS components for Bootstrap written by the \n" +
-    "        <a href=\"https://github.com/angular-ui?tab=members\">AngularUI Team</a>.\n" +
-    "        <a href=\"http://angular-ui.github.com/bootstrap\">More &raquo;</a>\n" +
-    "      </p>\n" +
-    "    </div>\n" +
-    "    <div class=\"col-xs-12 col-sm-6 col-md-4\">\n" +
-    "      <h4><i class=\"fa fa-flag\"></i> Font Awesome</h4>\n" +
-    "      <p>\n" +
-    "        The iconic font designed for use with Twitter Bootstrap.\n" +
-    "        <a href=\"http://fortawesome.github.com/Font-Awesome\">\n" +
-    "          More &raquo;\n" +
-    "        </a>\n" +
-    "      </p>\n" +
-    "    </div>\n" +
-    "    <div class=\"col-xs-12 col-sm-6 col-md-4\">\n" +
-    "      <h4><i class=\"fa fa-asterisk\"></i> Placeholders</h4>\n" +
-    "      <p>\n" +
-    "        Client-side image and text placeholder directives written in pure \n" +
-    "        AngularJS to make designing mock-ups wicked-fast.\n" +
-    "        <a href=\"http://joshdmiller.github.com/angular-placeholders\">\n" +
-    "          More &raquo;\n" +
-    "        </a>\n" +
-    "      </p>\n" +
-    "    </div>\n" +
-    "  </div>\n" +
-    "</div>\n" +
-    "\n" +
     "");
+}]);
+
+angular.module("login/login.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("login/login.tpl.html",
+    "<form role=\"form\" ng-submit=\"login()\">\n" +
+    "  <div class=\"form-group\">\n" +
+    "    <label for=\"email\">UserId:(Email):</label>\n" +
+    "    <input type=\"email\" class=\"form-control\" id=\"email\" ng-model=\"account.userid\">\n" +
+    "  </div>\n" +
+    "  <div class=\"form-group\">\n" +
+    "    <label for=\"pwd\">Password:</label>\n" +
+    "    <input type=\"password\" class=\"form-control\" id=\"pwd\" ng-model=\"account.password\">\n" +
+    "  </div>\n" +
+    "  <div class=\"checkbox\">\n" +
+    "    <label><input type=\"checkbox\"> Remember me</label>\n" +
+    "  </div>\n" +
+    "  <button type=\"submit\" class=\"btn btn-default\">Submit</button>\n" +
+    "  New User  <a href ui-sref=\"register\">Register</a>\n" +
+    "</form>");
+}]);
+
+angular.module("login/register.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("login/register.tpl.html",
+    "<form name=\"registerForm\" role=\"form\" ng-submit=\"register()\" novalidate>\n" +
+    "  <div class=\"form-group\" show-errors>\n" +
+    "    <label for=\"email\">UserId:(Email):</label>\n" +
+    "    <input type=\"email\" class=\"form-control\" id=\"email\" name=\"email\" ng-model=\"user.emailId\" required>\n" +
+    "    <p class=\"help-block\" ng-if=\"registerForm.email.$error.required\">The user's email is required</p>\n" +
+    "  </div>\n" +
+    "  <div class=\"form-group\" show-errors>\n" +
+    "    	Student<input type=\"radio\" name=\"role\" class=\"form-control\" ng-model=\"user.role\" value=\"STUDENT\" required>\n" +
+    "    	Faculty<input type=\"radio\" name=\"role\" class=\"form-control\" ng-model=\"user.role\" value=\"FACULTY\" required>\n" +
+    "    <p class=\"help-block\" ng-if=\"registerForm.role.$error.required\">The role selection is required</p>    \n" +
+    "  </div>\n" +
+    "  <div class=\"form-group\" show-errors>\n" +
+    "    <label for=\"pwd\">Password:</label>\n" +
+    "    <input type=\"password\" class=\"form-control\" name=\"pwd\" id=\"pwd\" ng-model=\"user.password\" required>\n" +
+    "    <p class=\"help-block\" ng-if=\"registerForm.pwd.$error.required\">The password is required</p>    \n" +
+    "  </div>\n" +
+    "  <div class=\"form-group\" show-errors>\n" +
+    "    <label for=\"first\">FirstName:</label>\n" +
+    "    <input type=\"text\" class=\"form-control\" name=\"first\" id=\"first\" ng-model=\"user.firstName\" required>\n" +
+    "    <p class=\"help-block\" ng-if=\"registerForm.first.$error.required\">Firstname is required</p>    \n" +
+    "  </div>\n" +
+    "  <div class=\"form-group\" show-errors>\n" +
+    "    <label for=\"last\">LastName:</label>\n" +
+    "    <input type=\"text\" class=\"form-control\" name=\"last\" id=\"last\" ng-model=\"user.lastName\" required>\n" +
+    "    <p class=\"help-block\" ng-if=\"registerForm.last.$error.required\">Lastname is required</p>    \n" +
+    "  </div>\n" +
+    "  <div class=\"form-group\">\n" +
+    "    <label for=\"middle\">MiddleName:</label>\n" +
+    "    <input type=\"text\" class=\"form-control\" id=\"middle\" ng-model=\"user.middleName\">\n" +
+    "  </div>\n" +
+    "  <div class=\"form-group\" show-errors>\n" +
+    "    <label for=\"street\">Street:</label>\n" +
+    "    <input type=\"text\" class=\"form-control\" name=\"street\" id=\"street\" ng-model=\"user.address.street\" required>\n" +
+    "    <p class=\"help-block\" ng-if=\"registerForm.street.$error.required\">Street is required</p>    \n" +
+    "  </div>  \n" +
+    "  <div class=\"form-group\" show-errors>\n" +
+    "    <label for=\"city\">City:</label>\n" +
+    "    <input type=\"text\" class=\"form-control\" name=\"city\" id=\"city\" ng-model=\"user.address.city\" required>\n" +
+    "    <p class=\"help-block\" ng-if=\"registerForm.city.$error.required\">City is required</p>    \n" +
+    "  </div>\n" +
+    "  <div class=\"form-group\" show-errors>\n" +
+    "	<label for=\"state\">State:</label> \n" +
+    "	<select id=\"state\" name=\"state\" ng-model=\"user.address.state\" required>\n" +
+    "			<option value=\"AL\">Alabama</option>\n" +
+    "			<option value=\"AK\">Alaska</option>\n" +
+    "			<option value=\"AZ\">Arizona</option>\n" +
+    "			<option value=\"AR\">Arkansas</option>\n" +
+    "			<option value=\"CA\">California</option>\n" +
+    "			<option value=\"CO\">Colorado</option>\n" +
+    "			<option value=\"CT\">Connecticut</option>\n" +
+    "			<option value=\"DE\">Delaware</option>\n" +
+    "			<option value=\"DC\">District Of Columbia</option>\n" +
+    "			<option value=\"FL\">Florida</option>\n" +
+    "			<option value=\"GA\">Georgia</option>\n" +
+    "			<option value=\"HI\">Hawaii</option>\n" +
+    "			<option value=\"ID\">Idaho</option>\n" +
+    "			<option value=\"IL\">Illinois</option>\n" +
+    "			<option value=\"IN\">Indiana</option>\n" +
+    "			<option value=\"IA\">Iowa</option>\n" +
+    "			<option value=\"KS\">Kansas</option>\n" +
+    "			<option value=\"KY\">Kentucky</option>\n" +
+    "			<option value=\"LA\">Louisiana</option>\n" +
+    "			<option value=\"ME\">Maine</option>\n" +
+    "			<option value=\"MD\">Maryland</option>\n" +
+    "			<option value=\"MA\">Massachusetts</option>\n" +
+    "			<option value=\"MI\">Michigan</option>\n" +
+    "			<option value=\"MN\">Minnesota</option>\n" +
+    "			<option value=\"MS\">Mississippi</option>\n" +
+    "			<option value=\"MO\">Missouri</option>\n" +
+    "			<option value=\"MT\">Montana</option>\n" +
+    "			<option value=\"NE\">Nebraska</option>\n" +
+    "			<option value=\"NV\">Nevada</option>\n" +
+    "			<option value=\"NH\">New Hampshire</option>\n" +
+    "			<option value=\"NJ\">New Jersey</option>\n" +
+    "			<option value=\"NM\">New Mexico</option>\n" +
+    "			<option value=\"NY\">New York</option>\n" +
+    "			<option value=\"NC\">North Carolina</option>\n" +
+    "			<option value=\"ND\">North Dakota</option>\n" +
+    "			<option value=\"OH\">Ohio</option>\n" +
+    "			<option value=\"OK\">Oklahoma</option>\n" +
+    "			<option value=\"OR\">Oregon</option>\n" +
+    "			<option value=\"PA\">Pennsylvania</option>\n" +
+    "			<option value=\"RI\">Rhode Island</option>\n" +
+    "			<option value=\"SC\">South Carolina</option>\n" +
+    "			<option value=\"SD\">South Dakota</option>\n" +
+    "			<option value=\"TN\">Tennessee</option>\n" +
+    "			<option value=\"TX\">Texas</option>\n" +
+    "			<option value=\"UT\">Utah</option>\n" +
+    "			<option value=\"VT\">Vermont</option>\n" +
+    "			<option value=\"VA\">Virginia</option>\n" +
+    "			<option value=\"WA\">Washington</option>\n" +
+    "			<option value=\"WV\">West Virginia</option>\n" +
+    "			<option value=\"WI\">Wisconsin</option>\n" +
+    "			<option value=\"WY\">Wyoming</option>\n" +
+    "		</select>\n" +
+    "		<p class=\"help-block\" ng-if=\"registerForm.state.$error.required\">State selection is required</p>        		\n" +
+    "	</div>\n" +
+    "  <div class=\"form-group\" show-errors>\n" +
+    "    <label for=\"zip\">Zip:</label>\n" +
+    "    <input type=\"text\" class=\"form-control\" name=\"zip\" id=\"zip\" ng-model=\"user.address.zipCode\" required>\n" +
+    "    <p class=\"help-block\" ng-if=\"registerForm.zip.$error.required\">Zip is required</p>        \n" +
+    "  </div>\n" +
+    "  <div class=\"form-group\" show-errors>\n" +
+    "    <label for=\"stream\">Stream:</label>\n" +
+    "	<select id=\"stream\" name=\"stream\" ng-model=\"user.stream\" required>\n" +
+    "		<option value=\"SE\">Software Engineering</option>\n" +
+    "		<option value=\"EE\">Electrical Engineering</option>\n" +
+    "		<option value=\"ME\">Mechanical Engineering</option>\n" +
+    "	</select>    \n" +
+    "	<p class=\"help-block\" ng-if=\"registerForm.stream.$error.required\">Stream selection is required</p>        		\n" +
+    "  </div>\n" +
+    "\n" +
+    "  <button type=\"submit\" class=\"btn btn-default\">Register</button>\n" +
+    "  <button type=\"button\" class=\"btn btn-default\" ng-click=\"reset()\">Reset</button>\n" +
+    "\n" +
+    "</form>");
 }]);
