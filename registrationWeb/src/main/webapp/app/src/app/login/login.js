@@ -87,7 +87,7 @@ angular.module( 'ngBoilerplate.login', [
 	$scope.register = function(){
 		$scope.$broadcast('show-errors-check-validity');
 		if ($scope.registerForm.$invalid) { return; }
-		loginService.register($scope.user, function(user){
+		    loginService.register($scope.user, function(user){
 			$state.go("login");
 		}, function(){
 			alert("Failed to register the user");
